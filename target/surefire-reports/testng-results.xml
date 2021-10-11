@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-10-11T19:07:51 IST" name="Surefire suite" finished-at="2021-10-11T19:09:08 IST" duration-ms="77596">
+    <groups>
+    </groups>
+    <test started-at="2021-10-11T19:07:51 IST" name="Surefire test" finished-at="2021-10-11T19:09:08 IST" duration-ms="77596">
+      <class name="Nauk.TestRunner">
+        <test-method signature="Nitin_naukri()[pri:0, instance:Nauk.TestRunner@77847718]" started-at="2021-10-11T19:07:51 IST" name="Nitin_naukri" finished-at="2021-10-11T19:08:39 IST" duration-ms="48784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Nitin_naukri -->
+      </class> <!-- Nauk.TestRunner -->
+      <class name="Nauk.TestRunner2">
+        <test-method signature="Nandan_naukri()[pri:0, instance:Nauk.TestRunner2@747ddf94]" started-at="2021-10-11T19:08:39 IST" name="Nandan_naukri" finished-at="2021-10-11T19:09:08 IST" duration-ms="28773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Nandan_naukri -->
+      </class> <!-- Nauk.TestRunner2 -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
