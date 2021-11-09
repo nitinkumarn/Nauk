@@ -42,8 +42,8 @@ public class TestRunner2 {
 		driver.switchTo().window(ParentwindowID);
 		driver.findElement(By.xpath("//a[@id='login_Layer']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[2]/input[1]")).sendKeys("nandan0205@gmail.com");
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[3]/input[1]")).sendKeys("8892501449");
+		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[2]/input[1]")).sendKeys("deepikabu1998@gmail.com");
+		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[3]/input[1]")).sendKeys("deepika@98");
 		driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/form[1]/div[6]/button[1]")).click();
 		Thread.sleep(2000);
 		
@@ -57,7 +57,7 @@ public class TestRunner2 {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='name']")).clear();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Nandan L");
+		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Deepika B.U");
 		
 		driver.findElement(By.xpath("//button[@id='saveBasicDetailsBtn']")).click();
 		
