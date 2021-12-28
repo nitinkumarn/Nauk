@@ -1,19 +1,21 @@
 package Nauk;
 
-import java.util.Iterator;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.Test;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestRunner {
-	
+public class TestRunnerNit {
 	
 	@Test
 	public  void Nitin_naukri() throws InterruptedException{
@@ -21,38 +23,24 @@ public class TestRunner {
 		
 		
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("--headless");
+		WebDriver driver = new ChromeDriver(options);
+//		WebDriver driver = new HtmlUnitDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https://www.naukri.com/");
+		driver.get("https://www.naukri.com/nlogin/login");
 		
-		
-		String ParentwindowID = driver.getWindowHandle();
-		Set<String> set = driver.getWindowHandles();
-		
-		Iterator<String> itr = set.iterator();
-		
-		while(itr.hasNext()) {
-			String ChildwindowIds = itr.next();
-			if(!(ParentwindowID.equals(ChildwindowIds))) {
-				driver.switchTo().window(ChildwindowIds);
-				driver.close();
-			}
-		}
-		
-		driver.switchTo().window(ParentwindowID);
-		driver.findElement(By.xpath("//a[@id='login_Layer']")).click();
+		System.out.println("URL Launched");
+		Thread.sleep(3000);
+		driver.findElement(By.id("usernameField")).sendKeys("nitinkumarsuccess@gmail.com");
+		driver.findElement(By.id("passwordField")).sendKeys("Nitink@1995");
+		driver.findElement(By.xpath("//div[@class='action row mb0']/div/button[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[2]/input[1]")).sendKeys("nitinkumarsuccess@gmail.com");
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[3]/input[1]")).sendKeys("Nitink@1995");
-		driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[2]/div[1]/form[1]/div[6]/button[1]")).click();
-		Thread.sleep(2000);
+		System.out.println("Login success");
 		
-		Actions act = new Actions(driver);
-		
-		act.moveToElement(driver.findElement(By.xpath("//div[contains(text(),'My Naukri')]"))).perform();
-		
-		driver.findElement(By.xpath("//a[contains(text(),'Edit Profile')]")).click();
+		driver.findElement(By.xpath("//div[@class='personal-info col s12 center']/div[1]")).click();
 		
 		driver.findElement(By.xpath("//em[contains(text(),'Edit')]")).click();
 		Thread.sleep(2000);
@@ -61,7 +49,7 @@ public class TestRunner {
 		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Nitinkumar N");
 		
 		driver.findElement(By.xpath("//button[@id='saveBasicDetailsBtn']")).click();
-		
+		System.out.println("completed");
 		
 		Thread.sleep(2000);
 		driver.quit();
@@ -69,3 +57,4 @@ public class TestRunner {
 	}
 
 }
+
