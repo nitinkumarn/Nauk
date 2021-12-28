@@ -15,7 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestRunnerNit {
+public class TestRunner {
 	
 	@Test
 	public  void Nitin_naukri() throws InterruptedException{
